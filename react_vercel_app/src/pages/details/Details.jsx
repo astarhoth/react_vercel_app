@@ -13,7 +13,6 @@ export default function Details() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isFav, setIsFav] = useState(false);
 
-  // Check if book is already in favorites
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("favoriteBooks")) || [];
@@ -24,11 +23,7 @@ export default function Details() {
   function addFavorite() {
     const saved = JSON.parse(localStorage.getItem("favoriteBooks")) || [];
 
-    // prevent duplicate
-    if (saved.some((b) => b.number === book.number)) {
-      alert("This book is already in your favorites!");
-      return;
-    }
+    if (saved.some((b) => b.number === book.number)) return;
 
     saved.push(book);
     localStorage.setItem("favoriteBooks", JSON.stringify(saved));
@@ -45,27 +40,43 @@ export default function Details() {
   return (
     <div className="details-container">
 
-      <h2>Book {book.number} — {book.originalTitle}</h2>
+      <div className="details-content">
 
-      <img src={book.cover} alt={book.originalTitle} className="details-img" />
+        {/* LEFT SIDE — COVER */}
+        <div className="details-left">
+          <img src={book.cover} alt={book.originalTitle} className="details-img" />
+        </div>
 
-      <p><strong>Release date:</strong> {book.releaseDate}</p>
-      <p><strong>Pages:</strong> {book.pages}</p>
-      <p><strong>Description:</strong> {book.description}</p>
+        {/* RIGHT SIDE — INFO */}
+        <div className="details-right">
+          <h1>Book {book.number}</h1>
+          <h2>{book.originalTitle}</h2>
 
-      <button className="back-btn" onClick={() => navigate("/")}>
-        Voltar
-      </button>
+          <p><strong>Release date:</strong> {book.releaseDate}</p>
+          <p><strong>Pages:</strong> {book.pages}</p>
 
-      {isFav ? (
-        <button className="remove-btn" onClick={removeFavorite}>
-          Remover dos Favoritos
-        </button>
-      ) : (
-        <button className="fav-btn" onClick={addFavorite}>
-          Adicionar aos Favoritos
-        </button>
-      )}
+          <h3>Description:</h3>
+          <p className="summary-text">{book.description}</p>
+
+          <div className="details-buttons">
+            <button className="back-btn" onClick={() => navigate("/")}>
+              Back
+            </button>
+
+            {isFav ? (
+              <button className="remove-btn" onClick={removeFavorite}>
+                Remove Favorite
+              </button>
+            ) : (
+              <button className="fav-btn" onClick={addFavorite}>
+                Add to Favorites
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
+
