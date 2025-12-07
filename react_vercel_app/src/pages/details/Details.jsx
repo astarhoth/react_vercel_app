@@ -59,7 +59,7 @@ export default function Details() {
           <p className="summary-text">{book.description}</p>
 
           <div className="details-buttons">
-            <button className="back-btn" onClick={() => navigate("-1")}>
+            <button className="back-btn" onClick={() => navigate(-1)}>
               Voltar
             </button>
 
