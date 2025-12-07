@@ -6,7 +6,7 @@ export default function Details() {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  if (!state?.book) return <p>No book received.</p>;
+  if (!state?.book) return <p>Nenhum livro recebido.</p>;
 
   const book = state.book;
 
@@ -42,34 +42,34 @@ export default function Details() {
 
       <div className="details-content">
 
-        {/* LEFT SIDE — COVER */}
+        {/* LADO ESQUERDO — CAPA */}
         <div className="details-left">
           <img src={book.cover} alt={book.originalTitle} className="details-img" />
         </div>
 
-        {/* RIGHT SIDE — INFO */}
+        {/* LADO DIREITO — INFORMAÇÕES */}
         <div className="details-right">
-          <h1>Book {book.number}</h1>
+          <h1>Livro {book.number}</h1>
           <h2>{book.originalTitle}</h2>
 
-          <p><strong>Release date:</strong> {book.releaseDate}</p>
-          <p><strong>Pages:</strong> {book.pages}</p>
+          <p><strong>Data de publicação:</strong> {book.releaseDate}</p>
+          <p><strong>Páginas:</strong> {book.pages}</p>
 
-          <h3>Description:</h3>
+          <h3>Descrição:</h3>
           <p className="summary-text">{book.description}</p>
 
           <div className="details-buttons">
-            <button className="back-btn" onClick={() => navigate("/")}>
-              Back
+            <button className="back-btn" onClick={() => navigate("-1")}>
+              Voltar
             </button>
 
             {isFav ? (
               <button className="remove-btn" onClick={removeFavorite}>
-                Remove Favorite
+                Remover dos Favoritos
               </button>
             ) : (
               <button className="fav-btn" onClick={addFavorite}>
-                Add to Favorites
+                Adicionar aos Favoritos
               </button>
             )}
           </div>
@@ -79,4 +79,3 @@ export default function Details() {
     </div>
   );
 }
-

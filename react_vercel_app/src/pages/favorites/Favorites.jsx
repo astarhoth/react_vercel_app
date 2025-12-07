@@ -23,7 +23,7 @@ export default function Favorites() {
             <div
               key={i}
               className="favorite-card"
-              onClick={() => navigate("/details", { state: { book } })}
+              onClick={() => navigate("/detalhes", { state: { book } })}
             >
               <img src={book.cover} alt={book.originalTitle} />
               <h3>Book {book.number}</h3>
