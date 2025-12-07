@@ -1,0 +1,49 @@
+.details-container {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.details-img {
+  width: 250px;
+  border-radius: 12px;
+  display: block;
+  margin: 20px auto;
+}
+
+.back-btn,
+.fav-btn,
+.remove-btn {
+  padding: 12px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 5px 0 0;
+  transition: 0.2s;
+}
+
+/* Botão Voltar */
+.back-btn {
+  background-color: #cccccc;
+}
+
+/* Botão para adicionar */
+.fav-btn {
+  background-color: #4b78ff;
+  color: white;
+}
+
+.fav-btn:hover {
+  opacity: 0.85;
+}
+
+/* Botão para remover */
+.remove-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.remove-btn:hover {
+  opacity: 0.85;
+}
