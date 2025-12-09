@@ -6,7 +6,7 @@ Aplicação desenvolvida para a disciplina Frontend Frameworks, cumprindo todos 
 ## Objetivo do Projeto
 Este projeto tem como objetivo criar uma aplicação React que consome a API pública de livros de Harry Potter, exibindo:
 
-- Uma lista de livros com barra de pesquisa na tela inicial
+- Um gerador de livros da Saga Harry Potter
 - Uma página de detalhes com informações completas do livro
 - Uma página com os livros favoritados
 
