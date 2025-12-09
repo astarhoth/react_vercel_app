@@ -55,3 +55,14 @@ npm run dev
 
 ### A aplicação estará disponível em:
 http://localhost:5173 ou algo parecido
+
+## Screenshots
+
+### 🏠 Tela Inicial (Home)
+![Home](/react_vercel_app/src/assets/screenshots/home.png)
+
+### 📖 Tela de Detalhes
+![Detalhes](/react_vercel_app/src/assets/screenshots/detalhes.png)
+
+### ⭐ Tela de Favoritos
+![Favoritos](/react_vercel_app/src/assets/screenshots/favoritos.png)
